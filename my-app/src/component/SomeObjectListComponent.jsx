@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
 import SomeObjectService from "../services/SomeObjectService";
+
 class SomeObjectListComponent extends Component {
 
     constructor(props) {
         super(props)
+        this.state = {
+            someObjects: [],
+            message: null
+        }
         this.refreshSomeObjectList = this.refreshSomeObjectList.bind(this)
     }
 
@@ -16,6 +21,7 @@ class SomeObjectListComponent extends Component {
             .then(
                 response => {
                     console.log(response);
+                    this.setState({ someObjects: response.data })
                 }
             )
     }
@@ -23,7 +29,7 @@ class SomeObjectListComponent extends Component {
     render() {
         return (
             <div className="container">
-                <h3>Some Object List</h3>
+                <h3>Objects and their names!</h3>
                 <div className="container">
                     <table className="table">
                         <thead>
@@ -33,10 +39,15 @@ class SomeObjectListComponent extends Component {
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Dan</td>
-                        </tr>
+                        {
+                            this.state.someObjects.map(
+                                someObject =>
+                                    <tr key={someObject.id}>
+                                        <td>{someObject.id}</td>
+                                        <td>{someObject.name}</td>
+                                    </tr>
+                            )
+                        }
                         </tbody>
                     </table>
                 </div>
