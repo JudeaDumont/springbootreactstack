@@ -1,5 +1,24 @@
 import React, { Component } from 'react';
+import SomeObjectService from "../services/SomeObjectService";
 class SomeObjectListComponent extends Component {
+
+    constructor(props) {
+        super(props)
+        this.refreshSomeObjectList = this.refreshSomeObjectList.bind(this)
+    }
+
+    componentDidMount() {
+        this.refreshSomeObjectList();
+    }
+
+    refreshSomeObjectList() {
+        SomeObjectService.retrieveAllSomeObjects("bush")
+            .then(
+                response => {
+                    console.log(response);
+                }
+            )
+    }
 
     render() {
         return (
