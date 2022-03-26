@@ -1,27 +1,27 @@
 import React, { Component } from 'react';
-import SomeObjectService from "../services/SomeObjectService";
+import ObjectService from "../services/ObjectService";
 
-class SomeObjectListComponent extends Component {
+class ObjectListByNameComponent extends Component {
 
     constructor(props) {
         super(props)
         this.state = {
-            someObjects: [],
+            Objects: [],
             message: null
         }
-        this.refreshSomeObjectList = this.refreshSomeObjectList.bind(this)
+        this.refreshObjectList = this.refreshObjectList.bind(this)
     }
 
     componentDidMount() {
-        this.refreshSomeObjectList();
+        this.refreshObjectList();
     }
 
-    refreshSomeObjectList() {
-        SomeObjectService.retrieveAllSomeObjects("bush")
+    refreshObjectList() {
+        ObjectService.retrieveObjectsByName("Boss")
             .then(
                 response => {
                     console.log(response);
-                    this.setState({ someObjects: response.data })
+                    this.setState({ Objects: response.data })
                 }
             )
     }
@@ -40,11 +40,11 @@ class SomeObjectListComponent extends Component {
                         </thead>
                         <tbody>
                         {
-                            this.state.someObjects.map(
-                                someObject =>
-                                    <tr key={someObject.id}>
-                                        <td>{someObject.id}</td>
-                                        <td>{someObject.name}</td>
+                            this.state.Objects.map(
+                                Object =>
+                                    <tr key={Object.id}>
+                                        <td>{Object.id}</td>
+                                        <td>{Object.name}</td>
                                     </tr>
                             )
                         }
@@ -56,4 +56,4 @@ class SomeObjectListComponent extends Component {
     }
 }
 
-export default SomeObjectListComponent
+export default ObjectListByNameComponent

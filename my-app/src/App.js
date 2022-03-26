@@ -1,12 +1,11 @@
-import logo from './logo.svg';
 import './App.css';
-import SomeObjectApp from './component/SomeObjectApp';
+import ObjectApp from './component/ObjectApp';
 
 function App() {
   return (
     <div className="App">
       <div className="container">
-        <SomeObjectApp />
+        <ObjectApp />
       </div>
     </div>
 

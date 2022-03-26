@@ -17,16 +17,15 @@ public class SomeObjectRestController {
     @Autowired
     private SomeObjectService someObjectService;
 
-//    @CrossOrigin(origins = { "http://localhost:3000", "http://localhost:4200" })
-//    @GetMapping("/{name}/getmeobjects")
-//    public List<SomeObject> getObjectsByName(@PathVariable String name) {
-//        return someObjectService.findAll();
-//    }
-
+    @CrossOrigin(origins = { "http://localhost:3000", "http://localhost:4200" })
+    @GetMapping("/{name}/getObjectsByName")
+    public List<SomeObject> getObjectsByName(@PathVariable String name) {
+        return someObjectService.getObjectsByName(name);
+    }
 
     @CrossOrigin(origins = { "http://localhost:3000", "http://localhost:4200" })
-    @GetMapping("/{name}/getmeobjects")
-    public List<SomeObject> getAllObjects(@PathVariable String name) {
-        return someObjectService.findAll();
+    @GetMapping("/getAllObjects")
+    public List<SomeObject> getAllObjects() {
+        return someObjectService.getAllObjects();
     }
 }

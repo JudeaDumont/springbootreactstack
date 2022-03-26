@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import com.example.demo.controllers.SomeObjectRestController;
 import com.example.demo.database.DatabaseConnecter;
 import com.example.demo.database.H2DBConnection;
 import com.example.demo.models.SomeObject;
@@ -15,17 +16,18 @@ import java.util.List;
 class DemoApplicationTests {
 
 	@Test
-	@SuppressWarnings("unchecked")
-	void contextLoads() {
+	void SaveObject() {
 		SomeObject so = new SomeObject(12L, "Man");
 		Session session = DatabaseConnecter.getSessionFactory().openSession();
 		Transaction tx = session.beginTransaction();
 		session.save(so);
 		tx.commit();
-		Query<SomeObject> query = DatabaseConnecter.getSessionFactory().openSession().createQuery("FROM SomeObject");
-		List<SomeObject> results = query.list();
-		System.out.print(results.toString());
-		DatabaseConnecter.shutdown();
 	}
+
+	@Test
+	void RunQuery() {
+		DatabaseConnecter.getSessionFactory().openSession().createQuery("FROM SomeObject").list();
+	}
+
 
 }
