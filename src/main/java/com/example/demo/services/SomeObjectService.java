@@ -12,6 +12,7 @@ import java.util.List;
 public class SomeObjectService {
     private static final List<SomeObject> someObjects = new ArrayList<>();
     private static long idCounter = 0;
+
     static{
         someObjects.add(new SomeObject(++idCounter, "cream"));
         someObjects.add(new SomeObject(++idCounter, "eggs"));

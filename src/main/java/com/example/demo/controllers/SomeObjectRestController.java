@@ -10,14 +10,23 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+
 @RestController
 public class SomeObjectRestController {
+
     @Autowired
     private SomeObjectService someObjectService;
 
+//    @CrossOrigin(origins = { "http://localhost:3000", "http://localhost:4200" })
+//    @GetMapping("/{name}/getmeobjects")
+//    public List<SomeObject> getObjectsByName(@PathVariable String name) {
+//        return someObjectService.findAll();
+//    }
+
+
     @CrossOrigin(origins = { "http://localhost:3000", "http://localhost:4200" })
     @GetMapping("/{name}/getmeobjects")
-    public List<SomeObject> getAllCourses(@PathVariable String name) {
+    public List<SomeObject> getAllObjects(@PathVariable String name) {
         return someObjectService.findAll();
     }
 }
