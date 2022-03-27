@@ -32,4 +32,10 @@ public class SomeObjectRestController {
     public void saveObject(@RequestBody SomeObject object) {
         someObjectService.saveObject(object);
     }
+
+    @CrossOrigin(origins = { "http://localhost:3000", "http://localhost:4200" })
+    @DeleteMapping("/{id}/deleteObject")
+    public void deleteObject(@PathVariable Long id) {
+        someObjectService.deleteObject(id);
+    }
 }

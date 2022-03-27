@@ -12,28 +12,22 @@ const Field = React.forwardRef(({label, type}, ref) => {
 
 const Form = ({onSubmit}) => {
     const idRef = React.useRef();
-    const nameRef = React.useRef();
     const handleSubmit = e => {
         e.preventDefault();
         // noinspection JSUnresolvedVariable
-        const data = {
-            id: Number(idRef.current.value),
-            name: nameRef.current.value
-        };
-        ObjectService.SaveObject(data);
+        ObjectService.DeleteObject(Number(idRef.current.value));
     };
     return (
         <form onSubmit={handleSubmit} >
             <Field ref={idRef} label="id:" type="number" pattern="[0-9]*" />
-            <Field ref={nameRef} label="name:" type="text" />
             <div>
-                <button type="submit">Save</button>
+                <button type="submit">Delete</button>
             </div>
         </form>
     );
 };
 
-const ObjectSaveComponent = () => {
+const ObjectDeleteComponent = () => {
     return (
         <div>
             <Form/>
@@ -41,4 +35,4 @@ const ObjectSaveComponent = () => {
     );
 };
 
-export default ObjectSaveComponent;
+export default ObjectDeleteComponent;

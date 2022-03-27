@@ -35,4 +35,12 @@ public class SomeObjectService {
         session.save(object);
         tx.commit();
     }
+
+    public void deleteObject(Long id) {
+        SomeObject object = new SomeObject(id,"");
+        Session session = DatabaseConnecter.getSessionFactory().openSession();
+        Transaction tx = session.beginTransaction();
+        session.delete(object);
+        tx.commit();
+    }
 }

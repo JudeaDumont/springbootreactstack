@@ -4,6 +4,7 @@ const API_URL = 'http://localhost:8080'
 const ALL_OBJECTS_API_POINT = `getAllObjects`
 const OBJECTS_BY_NAME_API_POINT = `getObjectsByName`
 const SAVE_OBJECT_API_POINT = `saveObject`
+const DELETE_OBJECT_API_POINT = `deleteObject`
 
 class ObjectService {
 
@@ -24,6 +25,13 @@ class ObjectService {
             method: 'post',
             url: `${API_URL}/${SAVE_OBJECT_API_POINT}`,
             data: object
+        });
+    }
+
+    DeleteObject(id) {
+        return axios({
+            method: 'delete',
+            url: `${API_URL}/${id}/${DELETE_OBJECT_API_POINT}`
         });
     }
 }
