@@ -29,7 +29,7 @@ class ObjectListByNameComponent extends Component {
     render() {
         return (
             <div className="container">
-                <h3>Objects and their names!</h3>
+                <h3>Objects By their names!</h3>
                 <div className="container">
                     <table className="table">
                         <thead>
