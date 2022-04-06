@@ -9,7 +9,7 @@ class ObjectApp extends Component {
         return (
             <div>
                 <h1>!!!!!Some Object Application!!!!!</h1>
-                <h1>!!!!!I DRANK A LOT OF CREAM!!!!!</h1>
+                <h1>!!!!!WOOHOO!!!!!</h1>
                 <ObjectSaveComponent/>
                 <ObjectDeleteComponent/>
                 <ObjectListComponent/>
