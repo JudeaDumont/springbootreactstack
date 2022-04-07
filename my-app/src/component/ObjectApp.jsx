@@ -8,11 +8,13 @@ import ObjectSaveComponent from "./ObjectSaveComponent";
 import ObjectDeleteComponent from "./ObjectDeleteComponent";
 import IntroToLogic from "../FollowReactCrashCourse/introductiontologicincomponent";
 import MyParentComponent from "../FollowReactCrashCourse/ParentChildPropertiesExample";
+import SquaringComponent from "../FollowReactCrashCourse/squaring component";
 
 class ObjectApp extends Component {
     render() {
         return (
             <div>
+                <SquaringComponent num2square={[1, 2, 3, 4, 5]}/>
                 <MyParentComponent/>
                 {/*<IntroToLogic/>*/}
                 {/*<ObjectSaveComponent/>*/}
