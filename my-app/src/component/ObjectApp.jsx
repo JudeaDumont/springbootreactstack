@@ -10,12 +10,14 @@ class ObjectApp extends Component {
         return (
             <div>
                 <IntroToLogic/>
-                <h1>!!!!!Some Object Application!!!!!</h1>
-                <h1>!!!!!WOOHOO!!!!!</h1>
                 <ObjectSaveComponent/>
                 <ObjectDeleteComponent/>
-                <ObjectListComponent/>
-                <ObjectListByNameComponent/>
+                <ObjectListComponent
+                    title={"List Of Objects!"}
+                />
+                <ObjectListByNameComponent
+                    title={"List Of Objects By Name!"}
+                />
             </div>
         )
     }

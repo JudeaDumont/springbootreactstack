@@ -20,7 +20,6 @@ class ObjectListByNameComponent extends Component {
         ObjectService.retrieveObjectsByName("Boss")
             .then(
                 response => {
-                    console.log(response);
                     this.setState({ Objects: response.data })
                 }
             )
@@ -29,7 +28,7 @@ class ObjectListByNameComponent extends Component {
     render() {
         return (
             <div className="container">
-                <h3>Objects By their names!</h3>
+                <h3>{this.props.title}</h3>
                 <div className="container">
                     <table className="table">
                         <thead>
