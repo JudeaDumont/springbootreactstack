@@ -35,7 +35,7 @@ import React from "react";
 export default function SquaringComponent(props) {
     return (<div>
             <h1>Numbers Squared:</h1>
-            <h3>{props.num2square.map(x => x * x).toString()}</h3>
+            <h3>{props.num2square.map(x => <p>{x * x}</p>)}</h3>
         </div>
     )
 
