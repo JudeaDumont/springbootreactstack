@@ -1,0 +1,67 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Inter, sans-serif;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    height: 90px;
+    background-color: #21222A;
+    padding: 30px 35px;
+}
+
+/*
+
+*/
+
+nav > h3 {
+    margin-right: auto;
+    color: #61dafb;
+    font-weight:700;
+    font-size:22px;
+}
+
+nav > h4{
+
+    color: #61dafb;
+
+}
+nav > h3, nav > h4 {
+    margin:0;
+
+}
+
+nav > h3 {
+    margin-right:auto;
+    color: #61dafb;
+}
+
+
+/*
+one piece of advice is to not style with native components if you don't have to
+just for practice sake, we care going to give everythign a class name.
+ a lot of css instead of react, syntehsize some of the information we have learned so far, learning basic react syntax and remind us of the past information wehave learned and practice it here.
+
+ lets move on to the next challenge.
+
+ don't worry about changing the color of the bullets.
+
+
+you can add a background image like shown below
+*/
+
+main {
+    padding: 57px 27px;
+    color: white;
+    background-image: url(https://www.google.com/imgres?imgurl=https%3A%2F%2Fcdn3.vectorstock.com%2Fi%2F1000x1000%2F78%2F57%2Freact-icon-in-a-hexagon-vector-36587857.jpg&imgrefurl=https%3A%2F%2Fwww.vectorstock.com%2Froyalty-free-vector%2Freact-icon-in-a-hexagon-vector-36587857&tbnid=jUuE6IGq-IpxgM&vet=12ahUKEwjOi7jzuYH3AhUUcs0KHSYuAxMQMygBegUIARDEAQ..i&docid=3rb29P4uX36IEM&w=1000&h=1080&q=react%20icon&ved=2ahUKEwjOi7jzuYH3AhUUcs0KHSYuAxMQMygBegUIARDEAQ);
+    background-repeat: no-repeat;
+    background-position-x: right;
+    background-position-y: 75%;
+
+}
+
