@@ -25,5 +25,14 @@
 //     work on building the header ocmponent.
 //
 //     seperate components flder even if it is not really necessary.
+//a
+
+
+
+/*
+One gotcha with react state is that component hierarchies are, to da gegree, dictated by where state needs to live.
+
+
+*/
 
 

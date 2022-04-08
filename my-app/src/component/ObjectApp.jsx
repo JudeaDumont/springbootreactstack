@@ -10,23 +10,27 @@ import IntroToLogic from "../FollowReactCrashCourse/introductiontologicincompone
 import MyParentComponent from "../FollowReactCrashCourse/ParentChildPropertiesExample";
 import SquaringComponent from "../FollowReactCrashCourse/squaring component";
 import APIExampleApp from "../FollowReactCrashCourse/APICallsExample/APIExampleApp";
+import MemeGeneratorExample from "../FollowReactCrashCourse/MemeGeneratorExample/MemeGeneratorExample";
 
 class ObjectApp extends Component {
     render() {
         return (
             <div>
-                <APIExampleApp/>
-                <SquaringComponent num2square={[1, 2, 3, 4, 5]}/>
-                <MyParentComponent/>
-                <IntroToLogic/>
-                <ObjectSaveComponent/>
-                <ObjectDeleteComponent/>
-                <ObjectListComponent
-                    title={"List Of Objects!"}
-                />
-                <ObjectListByNameComponent
-                    title={"List Of Objects By Name!"} //this can be refactored to where the list component is configurable to be a ListByNameComponent
-                />
+                <MemeGeneratorExample/>
+
+
+                {/*<APIExampleApp/>*/}
+                {/*<SquaringComponent num2square={[1, 2, 3, 4, 5]}/>*/}
+                {/*<MyParentComponent/>*/}
+                {/*<IntroToLogic/>*/}
+                {/*<ObjectSaveComponent/>*/}
+                {/*<ObjectDeleteComponent/>*/}
+                {/*<ObjectListComponent*/}
+                {/*    title={"List Of Objects!"}*/}
+                {/*/>*/}
+                {/*<ObjectListByNameComponent*/}
+                {/*    title={"List Of Objects By Name!"} //this can be refactored to where the list component is configurable to be a ListByNameComponent*/}
+                {/*/>*/}
             </div>
         )
     }
