@@ -22,3 +22,7 @@ export default function APIExampleApp() {
         </div>
     )
 }
+
+//I think it is a better convention to break doewn the object only as much as the level implies. for example.
+// pass into the child component the whole object that it represents rather than each individual property of the object,
+// then, within the child object, breakdown the objects properties into each individual native dom element as intended to be displayed.

@@ -16,17 +16,17 @@ class ObjectApp extends Component {
         return (
             <div>
                 <APIExampleApp/>
-                {/*<SquaringComponent num2square={[1, 2, 3, 4, 5]}/>*/}
-                {/*<MyParentComponent/>*/}
-                {/*<IntroToLogic/>*/}
-                {/*<ObjectSaveComponent/>*/}
-                {/*<ObjectDeleteComponent/>*/}
-                {/*<ObjectListComponent*/}
-                {/*    title={"List Of Objects!"}*/}
-                {/*/>*/}
-                {/*<ObjectListByNameComponent*/}
-                {/*    title={"List Of Objects By Name!"} //this can be refactored to where the list component is configurable to be a ListByNameComponent*/}
-                {/*/>*/}
+                <SquaringComponent num2square={[1, 2, 3, 4, 5]}/>
+                <MyParentComponent/>
+                <IntroToLogic/>
+                <ObjectSaveComponent/>
+                <ObjectDeleteComponent/>
+                <ObjectListComponent
+                    title={"List Of Objects!"}
+                />
+                <ObjectListByNameComponent
+                    title={"List Of Objects By Name!"} //this can be refactored to where the list component is configurable to be a ListByNameComponent
+                />
             </div>
         )
     }
