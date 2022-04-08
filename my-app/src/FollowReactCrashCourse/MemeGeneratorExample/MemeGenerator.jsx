@@ -1,9 +1,16 @@
 import React from "react";
+import memesData from "./memesData";
 
 export default function MemeGenerator() {
+    function handleButtonClick(){
+        console.log(memesData.data.memes[Math.floor(Math.random() * memesData.data.memes.length)].url);
+    }
+    function handleSubmit(){
+        console.log("SUBMOOT");
+    }
     return (
         <main>
-            <form className={"form"}>
+            <div className={"form"} onSubmit={handleSubmit}>
                 <input
                     type={"text"}
                     placeholder={"Top Text"}
@@ -15,11 +22,12 @@ export default function MemeGenerator() {
                     className={"form--input"}
                 />
                 <button
+                    onClick={handleButtonClick}
                     className={"form--button"}
                 >
                     New Meme Image
                 </button>
-            </form>
+            </div>
         </main>
 
     )
