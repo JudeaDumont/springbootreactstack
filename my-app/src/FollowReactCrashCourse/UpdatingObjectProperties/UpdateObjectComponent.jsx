@@ -38,3 +38,47 @@ export default function UpdateObjectComponent() {
     )
 
 }
+
+
+// the problem with having an array as state and pushing into it, like this:
+//
+// const [myArray, setMyArray()] = React.useState()
+//
+// myArray.push("deez");
+//
+// the problem here is that you are directly changing a dynamic variable.
+//
+//     instead you need to do this:
+//
+// setMyArray(prevMyArray => [...prevMyArray, "nuts"])
+//
+// //this is pretty dumb because it copies everything that was in the array previously everytime a single item needs to be added on,
+// //insanely inefficient.
+//
+// So... I believe I have a winning argument.
+//
+//     we are using react to render things onto the web page, I can't imagine a use case for needing a gigantic number of elements in state
+// either what is going to be rendered on page is going to be a subset of those elements and they can be broken down as such
+//
+// say for a phone book, or, say for an intricate web of nodes and vertices, then the bottleneck is never going to be duplicating that array to be reassigned as the new state,
+//
+//     it will always be rendering it on the web page with native DOM elements.
+//
+//     In the case where you are thinking that the state needs to contain a huge number of array elements
+// the solution is probably to reconsider the size of the array in terms of what you actually have to render on the page.
+//
+
+// this IDE or something about this gives a warning where if you spread the object and then only update one of the internal values, it thinks you are trying to assign an object to another object that do not have the same definition even though, the assigning object just has an update for one of the fields on the initial object.
+//
+//     function handleIDClick() {
+//     // noinspection JSCheckFunctionSignatures
+//     setObj(prevObj => {
+//         return {...prevObj, id: prevObj.id + 1}
+//     })
+// }
+//
+// //the above gives a warning because the "name:" field is not present in the returned object.
+// // it interprets this as, whatever is in prevObj + some field called ID, instead of
+// // interpreting it as, prevOPbj + an update to one of the fields in object.
+//
+// //bad static checking here
