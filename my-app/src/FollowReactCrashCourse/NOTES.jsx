@@ -167,6 +167,23 @@ it will always be rendering it on the web page with native DOM elements.
 In the case where you are thinking that the state needs to contain a huge number of array elements
 the solution is probably to reconsider the size of the array in terms of what you actually have to render on the page.
 
+
+this IDE or something about this gives a warning where if you spread the object and then only update one of the internal values, it thinks you are trying to assign an object to another object that do not have the same definition even though, the assigning object just has an update for one of the fields on the initial object.
+
+    function handleIDClick() {
+        // noinspection JSCheckFunctionSignatures
+        setObj(prevObj => {
+            return {...prevObj, id: prevObj.id + 1}
+        })
+    }
+
+    //the above gives a warning because the "name:" field is not present in the returned object.
+    // it interprets this as, whatever is in prevObj + some field called ID, instead of
+    // interpreting it as, prevOPbj + an update to one of the fields in object.
+
+    //bad static checking here
+
+
 */
 
 

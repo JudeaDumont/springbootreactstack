@@ -11,13 +11,14 @@ import MyParentComponent from "../FollowReactCrashCourse/ParentChildPropertiesEx
 import SquaringComponent from "../FollowReactCrashCourse/squaring component";
 import APIExampleApp from "../FollowReactCrashCourse/APICallsExample/APIExampleApp";
 import MemeGeneratorExample from "../FollowReactCrashCourse/MemeGeneratorExample/MemeGeneratorExample";
+import UpdateObjectComponentExample from "../FollowReactCrashCourse/UpdatingObjectProperties/UpdateObjectApp";
 
 class ObjectApp extends Component {
     render() {
         return (
             <div>
-                <MemeGeneratorExample/>
-
+                {/*<MemeGeneratorExample/>*/}
+                <UpdateObjectComponentExample/>
 
                 {/*<APIExampleApp/>*/}
                 {/*<SquaringComponent num2square={[1, 2, 3, 4, 5]}/>*/}
