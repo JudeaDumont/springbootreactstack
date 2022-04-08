@@ -17,8 +17,8 @@ class ObjectApp extends Component {
     render() {
         return (
             <div>
-                {/*<MemeGeneratorExample/>*/}
-                <UpdateObjectComponentExample/>
+                <MemeGeneratorExample/>
+                {/*<UpdateObjectComponentExample/>*/}
 
                 {/*<APIExampleApp/>*/}
                 {/*<SquaringComponent num2square={[1, 2, 3, 4, 5]}/>*/}
