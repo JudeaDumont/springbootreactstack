@@ -1,20 +1,21 @@
 import React from "react";
 import memesData from "./memesData";
+import MemeImage from "./MemeImage";
 
 export default function MemeGenerator() {
     const [meme, setMeme] = React.useState({
-        url: getMemeURLUrl(),
+        url: getMemeURL(),
         btmtxt: "",
         toptxt: "",
     })
 
-    function getMemeURLUrl() {
+    function getMemeURL() {
         return memesData.data.memes[Math.floor(Math.random() * memesData.data.memes.length)].url;
     }
 
     function handleButtonClick(){
         // noinspection JSCheckFunctionSignatures
-        setMeme(prevMeme => ({ ...prevMeme, url: getMemeURLUrl()}))
+        setMeme(prevMeme => ({ ...prevMeme, url: getMemeURL()}))
     }
     function handleSubmit(){
         console.log("SUBMOOT")
@@ -38,7 +39,7 @@ export default function MemeGenerator() {
                 >
                     New Meme Image
                 </button>
-                <img src={meme.url.toString()} alt={"boner forest"}  width={"800px"} height={"400px"}/>
+                <MemeImage memeUrl={meme.url}/>
             </div>
         </main>
     )
