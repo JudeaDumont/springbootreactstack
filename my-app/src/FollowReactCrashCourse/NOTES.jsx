@@ -102,7 +102,38 @@ includes the unpacking of an array into individual variables we can reference fr
 
 any value that we call setSomeDynamicVariable with is going to be the new version of state.
 
+in react, we never want to modify state directly, that is we never want to assign state a value directly, you can wind up in a loop where react detects that the state has changed and so then react assigns to the state then detects that state has changed then assigns to the state etc. etc.
 
+so:
+const [i, setI] = React.useState(0) //setI is a setter function for I
+
+i++ //this is catastrophic
+++i //this is catastrophic
+
+setI(i + 1) //this is fine because we are not directly modifying state,
+we are using the mechanisms provided by react for the specific task of modifying state to our liking.
+
+The reason it is best practice do only update state variables with a callback function is because React will guarantee the order in which the state is updated by the calls.
+
+const [i, setI] = React.useState(0)
+setI(i + 1)
+setI(i/2)
+
+// i could be 0.5 or 1
+
+
+const [i, setI] = React.useState(0)
+setI(i => i + 1)
+setI(i => i / 2)
+// i is always 0.5
+
+//Something about the functionalness of the second solution guarantees sequential execution
+
+//this tells me that React is making use of parallelism/concurrency
+
+first create a new piece of state and then create an image below the button such that the new image is displayed in there.
+
+but what if I wanted to talk between components?
 
 */
 

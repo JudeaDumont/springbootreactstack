@@ -16,7 +16,6 @@ export default function MemeGenerator() {
     }
     return (
         <main>
-            <h1>{memeURL}</h1>
             <div className={"form"} onSubmit={handleSubmit}>
                 <input
                     type={"text"}
@@ -34,6 +33,7 @@ export default function MemeGenerator() {
                 >
                     New Meme Image
                 </button>
+                <img src={memeURL.toString()} alt={"boner forest"}  width={"800px"} height={"400px"}/>
             </div>
         </main>
 
