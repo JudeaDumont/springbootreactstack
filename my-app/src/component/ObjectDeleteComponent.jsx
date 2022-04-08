@@ -10,12 +10,13 @@ const Field = React.forwardRef(({label, type}, ref) => {
     );
 });
 
-const Form = ({onSubmit}) => {
+const Form = (props) => {
     const idRef = React.useRef();
     const handleSubmit = e => {
         e.preventDefault();
         // noinspection JSUnresolvedVariable
         ObjectService.DeleteObject(Number(idRef.current.value));
+        props.refreshList()
     };
     return (
         <form onSubmit={handleSubmit} >
@@ -27,10 +28,10 @@ const Form = ({onSubmit}) => {
     );
 };
 
-const ObjectDeleteComponent = () => {
+const ObjectDeleteComponent = (props) => {
     return (
         <div>
-            <Form/>
+            <Form refreshList={props.refreshList}/>
         </div>
     );
 };

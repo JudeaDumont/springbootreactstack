@@ -10,7 +10,7 @@ const Field = React.forwardRef(({label, type}, ref) => {
     );
 });
 
-const Form = ({onSubmit}) => {
+const Form = (props) => {
     const idRef = React.useRef();
     const nameRef = React.useRef();
     const handleSubmit = e => {
@@ -21,6 +21,7 @@ const Form = ({onSubmit}) => {
             name: nameRef.current.value
         };
         ObjectService.SaveObject(data);
+        props.refreshList()
     };
     return (
         <form onSubmit={handleSubmit} >
@@ -33,10 +34,10 @@ const Form = ({onSubmit}) => {
     );
 };
 
-const ObjectSaveComponent = () => {
+const ObjectSaveComponent = (props) => {
     return (
         <div>
-            <Form/>
+            <Form refreshList={props.refreshList}/>
         </div>
     );
 };

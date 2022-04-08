@@ -14,24 +14,35 @@ import MemeGeneratorExample from "../FollowReactCrashCourse/MemeGeneratorExample
 import UpdateObjectComponentExample from "../FollowReactCrashCourse/UpdatingObjectProperties/UpdateObjectApp";
 
 class ObjectApp extends Component {
+
+    constructor(props) {
+        super(props)
+        this.listComponent = React.createRef()
+    }
+
+    refreshList = () => {
+        this.listComponent.current.refreshObjectList();
+    };
+
     render() {
         return (
             <div>
-                <MemeGeneratorExample/>
+                {/*<MemeGeneratorExample/>*/}
                 {/*<UpdateObjectComponentExample/>*/}
 
                 {/*<APIExampleApp/>*/}
                 {/*<SquaringComponent num2square={[1, 2, 3, 4, 5]}/>*/}
                 {/*<MyParentComponent/>*/}
                 {/*<IntroToLogic/>*/}
-                {/*<ObjectSaveComponent/>*/}
-                {/*<ObjectDeleteComponent/>*/}
-                {/*<ObjectListComponent*/}
-                {/*    title={"List Of Objects!"}*/}
-                {/*/>*/}
-                {/*<ObjectListByNameComponent*/}
-                {/*    title={"List Of Objects By Name!"} //this can be refactored to where the list component is configurable to be a ListByNameComponent*/}
-                {/*/>*/}
+                <ObjectSaveComponent refreshList={this.refreshList}/>
+                <ObjectDeleteComponent refreshList={this.refreshList}/>
+                <ObjectListComponent
+                    ref={this.listComponent}
+                    title={"List Of Objects!"}
+                />
+                <ObjectListByNameComponent
+                    title={"List Of Objects By Name!"} //this can be refactored to where the list component is configurable to be a ListByNameComponent
+                />
             </div>
         )
     }
