@@ -74,6 +74,18 @@ whole idea behind object oriented programming. To couple data with the operation
 
 What an awesome way to discover the trade offs between functional and object oriented from the perspective of functional.
 
+when you intiialize state with incoming props that is called derived state. It is generally accepted that intiializing state with incoming props is worse than
+using unified state.
 
+attempting to identify which box gets updated by passing the ID won't work because we do not get to decide what gets passed to our toggle function.
 
+    function toggleTurnedOn(key)
+    <div onClick={props.toggleTurnedOn} style={styles} className={"box"}/>
+
+incompatible
+
+to make this work you have to wrap the onCLick handler in another function
+
+    function toggleTurnedOn(key)
+    <div onClick={()=>props.toggleTurnedOn(key)} style={styles} className={"box"}/>
 */
