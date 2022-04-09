@@ -1,10 +1,15 @@
 import React from "react";
 
-export default class BoxComponent extends React.Component {
-    render() {
-        const styles = {
-            backgroundColor:  this.props.on?"green":"red"
-        }
-        return <div style={styles} className={"box"}/>;
+export default function BoxComponent(props) {
+    const [turnedOn, setTurnedOn] = React.useState(props.on)
+    const styles = {
+        backgroundColor: turnedOn ? "green" : "red"
     }
+    function toggleTurnedOn(){
+        setTurnedOn(prevTurnedON => !prevTurnedON)
+
+    }
+    return (
+        <div onClick={toggleTurnedOn} style={styles} className={"box"}/>
+    )
 }
