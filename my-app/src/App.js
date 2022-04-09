@@ -1,4 +1,4 @@
-import './App.css';
+//import './App.css';
 import ObjectApp from './component/ObjectApp';
 
 function App() {

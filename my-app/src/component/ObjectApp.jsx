@@ -12,6 +12,7 @@ import SquaringComponent from "../FollowReactCrashCourse/squaring component";
 import APIExampleApp from "../FollowReactCrashCourse/APICallsExample/APIExampleApp";
 import MemeGeneratorExample from "../FollowReactCrashCourse/MemeGeneratorExample/MemeGeneratorExample";
 import UpdateObjectComponentExample from "../FollowReactCrashCourse/UpdatingObjectProperties/UpdateObjectApp";
+import DarkThemeApp from "../FollowReactCrashCourse/DarkThemeExample/DarkThemeApp";
 
 class ObjectApp extends Component {
 
@@ -27,6 +28,8 @@ class ObjectApp extends Component {
     render() {
         return (
             <div>
+                <DarkThemeApp/>
+
                 {/*<MemeGeneratorExample/>*/}
                 {/*<UpdateObjectComponentExample/>*/}
 
@@ -34,15 +37,15 @@ class ObjectApp extends Component {
                 {/*<SquaringComponent num2square={[1, 2, 3, 4, 5]}/>*/}
                 {/*<MyParentComponent/>*/}
                 {/*<IntroToLogic/>*/}
-                <ObjectSaveComponent refreshList={this.refreshList}/>
-                <ObjectDeleteComponent refreshList={this.refreshList}/>
-                <ObjectListComponent
-                    ref={this.listComponent}
-                    title={"List Of Objects!"}
-                />
-                <ObjectListByNameComponent
-                    title={"List Of Objects By Name!"} //this can be refactored to where the list component is configurable to be a ListByNameComponent
-                />
+                {/*<ObjectSaveComponent refreshList={this.refreshList}/>*/}
+                {/*<ObjectDeleteComponent refreshList={this.refreshList}/>*/}
+                {/*<ObjectListComponent*/}
+                {/*    ref={this.listComponent}*/}
+                {/*    title={"List Of Objects!"}*/}
+                {/*/>*/}
+                {/*<ObjectListByNameComponent*/}
+                {/*    title={"List Of Objects By Name!"} //this can be refactored to where the list component is configurable to be a ListByNameComponent*/}
+                {/*/>*/}
             </div>
         )
     }
