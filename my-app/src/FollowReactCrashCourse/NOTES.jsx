@@ -62,7 +62,17 @@ which will, in turn, bubble up to the parent until the method of the reffed sibl
 (this.listComponent.current.refreshObjectList();)
 which the ref "ref={this.listComponent}" defined in the parent gives access.
 
+Context and redux are both technologies that help solve the problem of state creeping up to the highest level of the app.
 
+This problem suits my solution to having a sibling component simply call a function that does only the work that needs
+to be done on its sibling (refreshing the object list).
+
+To me this seems like a more viable solution then moving the state up for exactly the reason that redux and context
+exist, state creeping up to a level where its access is unnecessary in many positions below that level in the dependency
+tree. State should exist at the leaves and the functions that operate on that state coupled with it, this is the
+whole idea behind object oriented programming. To couple data with the operations that utilize it.
+
+What an awesome way to discover the trade offs between functional and object oriented from the perspective of functional.
 
 
 
