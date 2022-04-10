@@ -21,6 +21,20 @@ since we care about what the number previously was to get the new number.
 And in this case, if we are updating an element in an array, then we need to use the previous contents of the array
 that that element is included.
 
+My other problem with this is that the state is not at the leaves.
+
+the state is at a parent of the leaves for some arbitrary learning related reason to show how to communicate with a parent
+for dynamically generated children.
+
+if you are having to pass areound IDs to change the state of a component, that should be your first hint that the state
+you are trying to change should be at the level of the component from which you are having to pass an ID.
+
+I suppose that the article that the speaker previously brought up goes against my instinct. I am just going to trust
+that that is the case and that I don't need "derived state" which is what I am describing.
+
+if the parent intializes the components with their state, then, the state should live in the parent I guess.
+
+
 
 
 */
