@@ -6,6 +6,6 @@ export default function BoxComponent(props) {
     }
     //yeah you dont have access to key but you can duplicate it under another name and use that, that's totally not counterintuitive
     return (
-        <div onClick={()=>props.toggleTurnedOn(props.id)} style={styles} className={"box"}/>
+        <div onClick={props.toggleTurnedOn} style={styles} className={"box"}/>
     )
 }

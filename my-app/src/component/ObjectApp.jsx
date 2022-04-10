@@ -30,8 +30,8 @@ class ObjectApp extends Component {
     render() {
         return (
             <div>
-                <ConditionalRenderingApp/>
-                {/*<DarkThemeAppUnified/>*/}
+                {/*<ConditionalRenderingApp/>*/}
+                <DarkThemeAppUnified/>
 
                 {/*<MemeGeneratorExample/>*/}
                 {/*<UpdateObjectComponentExample/>*/}

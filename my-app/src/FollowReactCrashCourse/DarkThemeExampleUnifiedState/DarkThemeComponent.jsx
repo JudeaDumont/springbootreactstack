@@ -10,8 +10,7 @@ export default function DarkThemeComponent() {
         <BoxComponent
             on={square.on}
             key={square.id} //this doesn't even show up in the component, no access. wtf
-            id={square.id}
-            toggleTurnedOn={toggleTurnedOn}
+            toggleTurnedOn={()=>toggleTurnedOn(square.id)} //closure
         />
     ))
 
