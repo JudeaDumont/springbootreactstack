@@ -119,7 +119,7 @@ export default function DarkThemeComponent() {
 // to make this work you have to wrap the onCLick handler in another function
 //
 // function toggleTurnedOn(key)
-// <div onClick={()=>props.toggleTurnedOn(key)} style={styles} className={"box"}/>
+// <div onClick={()=>props.toggleTurnedOn(key)} style={styles} className={"box"}/> //GOOD EXAMPLE FOR CLOSURE REFACTORING
 //
 //
 // for the next part we are going to rewrite the funciton loops over an array (which bothered me as seen above)

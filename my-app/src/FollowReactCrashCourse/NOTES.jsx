@@ -3,10 +3,10 @@
 everytime a box gets clicked it runs the function that is assigned to onCLick
 in this case, props.toggle(props.id)
 
-remember that we have ot wrap the function in another function to pass arguments to it.
+remember that we have ot wrap the function in another function to pass arguments to it. (OR USE A CLOSURE)
 
 so onClick is assigned like this:
-onCLick={()=>{props.toggle(props.id)}}
+onCLick={()=>{props.toggle(props.id)}} //GOOD EXAMPLE FOR CLOSURE REFACTORING
 
 when we call this function we are updating react state,
 
