@@ -8,10 +8,11 @@ export default function Level5App() {
         state: "",
         comments: "",
         hasAids: false,
-        aidsType: ""
+        aidsType: "",
+        egg: ""
     })
 
-    console.log(formData.aidsType) //now its logging when the component is rendered, which is what you want for react
+    console.log(formData.egg) //now its logging when the component is rendered, which is what you want for react
     function handleChange(event) {
         setFormData(prevFormData => {
             const {name, value, type, checked} = event.target
@@ -95,6 +96,18 @@ export default function Level5App() {
                         checked={formData.aidsType==="super-hyper-mega-death-aids"}//method for control
                     />
                     <label htmlFor={"super-hyper-mega-death-aids"}>Super Hyper Mega Death AIDS?</label>
+                    <select
+                        id={"egg"}
+                        value={formData.egg}
+                        onChange={handleChange}
+                        name={"egg"}
+                    >
+                        <option value={""}>--Choose--</option>
+                        <option value={"deez"}>Deez</option>
+                        <option value={"nutz"}>Nutz</option>
+                        <option value={"goat"}>Goat</option>
+                        <option value={"ham"}>Ham</option>
+                    </select>
                 </fieldset>
             </form>
         </div>
