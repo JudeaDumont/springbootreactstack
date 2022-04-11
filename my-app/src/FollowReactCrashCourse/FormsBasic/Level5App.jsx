@@ -23,9 +23,16 @@ export default function Level5App() {
         })
     }
 
+    function handleSubmit(event) {
+        event.preventDefault() //this means it won't refresh our page and rerender our app with its initial state and configuration.
+        console.log(formData)
+        //preventdefault prevents the way of the past of submitting forms with action methods that generally point to
+        // php with a specific http protocol
+    }
+
     return (
         <div>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <input
                     type={"text"}
                     placeholder={"First Name"}
@@ -33,6 +40,7 @@ export default function Level5App() {
                     name={"firstName"}
                     value={formData.firstName}
                 />
+                <br/>
                 <input
                     type={"text"}
                     placeholder={"Last Name"}
@@ -40,6 +48,7 @@ export default function Level5App() {
                     name={"lastName"}
                     value={formData.lastName}
                 />
+                <br/>
                 <input
                     type={"text"}
                     placeholder={"Email"}
@@ -47,6 +56,7 @@ export default function Level5App() {
                     name={"email"}
                     value={formData.email}
                 />
+                <br/>
                 <input
                     type={"text"}
                     placeholder={"State"}
@@ -54,12 +64,16 @@ export default function Level5App() {
                     name={"state"}
                     value={formData.state}
                 />
+                <br/>
                 <textarea
                     placeholder={"Comments"}
                     onChange={handleChange}
                     name={"comments"}
                     value={formData.comments}
                 />
+                <br/>
+                <br/>
+                <br/>
                 <input
                     type={"checkbox"}
                     onChange={handleChange}
@@ -67,6 +81,7 @@ export default function Level5App() {
                     checked={formData.hasAids}
                 />
                 <label htmlFor={"hasAids"}>Got AIDS?</label>
+                <br/>
                 <fieldset>
                     <legend>Type of AIDS Achieved</legend>
                     <input
@@ -78,6 +93,7 @@ export default function Level5App() {
                         checked={formData.aidsType==="super-aids"}
                     />
                     <label htmlFor={"super-aids"}>Super AIDS?</label>
+                    <br/>
                     <input
                         type={"radio"}
                         onChange={handleChange}
@@ -87,6 +103,7 @@ export default function Level5App() {
                         checked={formData.aidsType==="super-hyper-mega-aids"}
                     />
                     <label htmlFor={"super-hyper-mega-aids"}>Super Hyper Mega AIDS?</label>
+                    <br/>
                     <input
                         type={"radio"}
                         onChange={handleChange}
@@ -96,6 +113,8 @@ export default function Level5App() {
                         checked={formData.aidsType==="super-hyper-mega-death-aids"}//method for control
                     />
                     <label htmlFor={"super-hyper-mega-death-aids"}>Super Hyper Mega Death AIDS?</label>
+                    <br/>
+                    <br/>
                     <select
                         id={"egg"}
                         value={formData.egg}
@@ -109,6 +128,7 @@ export default function Level5App() {
                         <option value={"ham"}>Ham</option>
                     </select>
                 </fieldset>
+                <button>SHRIMP</button>
             </form>
         </div>
     )
