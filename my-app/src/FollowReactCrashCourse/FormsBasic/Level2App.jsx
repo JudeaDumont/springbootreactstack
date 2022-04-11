@@ -9,7 +9,9 @@ import React from "react";
 export default function Level2App() {
     const [formData, setFormData] = React.useState({
         firstName: "",
-        lastName: ""
+        lastName: "",
+        email: "",
+        state: ""
     })
 
     //we are going to chagne this handler to make it more universal
@@ -47,6 +49,18 @@ export default function Level2App() {
                     placeholder={"Last Name"}
                     onChange={handleChange}
                     name={"lastName"}
+                />
+                <input
+                    type={"text"}
+                    placeholder={"Email"}
+                    onChange={handleChange}
+                    name={"email"}
+                />
+                <input
+                    type={"text"}
+                    placeholder={"State"}
+                    onChange={handleChange}
+                    name={"state"}
                 />
             </form>
         </div>
