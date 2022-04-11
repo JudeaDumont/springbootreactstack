@@ -17,6 +17,7 @@ import DarkThemeAppUnified from "../FollowReactCrashCourse/DarkThemeExampleUnifi
 import ConditionalRenderingApp from "../FollowReactCrashCourse/ConditionalRednderingExample/ConditionalRendering";
 import Level1App from "../FollowReactCrashCourse/FormsBasic/Level1App";
 import Level2App from "../FollowReactCrashCourse/FormsBasic/Level2App";
+import Level3App from "../FollowReactCrashCourse/FormsBasic/Level3App";
 
 class ObjectApp extends Component {
 
@@ -33,7 +34,7 @@ class ObjectApp extends Component {
         return (
             <div>
                 {/*<Level1App/>*/}
-                <Level2App/>
+                <Level3App/>
                 {/*<ConditionalRenderingApp/>*/}
                 {/*<DarkThemeAppUnified/>*/}
 
