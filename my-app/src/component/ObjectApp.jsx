@@ -15,6 +15,7 @@ import UpdateObjectComponentExample from "../FollowReactCrashCourse/UpdatingObje
 import DarkThemeApp from "../FollowReactCrashCourse/DarkThemeExample/DarkThemeApp";
 import DarkThemeAppUnified from "../FollowReactCrashCourse/DarkThemeExampleUnifiedState/DarkThemeAppUnified";
 import ConditionalRenderingApp from "../FollowReactCrashCourse/ConditionalRednderingExample/ConditionalRendering";
+import Level1App from "../FollowReactCrashCourse/FormsBasic/Level1App";
 
 class ObjectApp extends Component {
 
@@ -30,7 +31,8 @@ class ObjectApp extends Component {
     render() {
         return (
             <div>
-                <ConditionalRenderingApp/>
+                <Level1App/>
+                {/*<ConditionalRenderingApp/>*/}
                 {/*<DarkThemeAppUnified/>*/}
 
                 {/*<MemeGeneratorExample/>*/}

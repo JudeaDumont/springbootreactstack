@@ -1,40 +1,55 @@
-
 /*
-everytime a box gets clicked it runs the function that is assigned to onCLick
-in this case, props.toggle(props.id)
+* what is conditional rendering?
+* Conditional rendering is the act of controlling rendering with various methods such that conditions must be met for
+* somehting to be rendered, or for something to be rendered a certain way.
+*
+* If somethings visibility or display depends on some particular condition then that something is subject to
+* "conditional rendering"
+*
+* when would you use &&?
+*
+* && is the and short circuit operator. it can be used to "and" two conditions together ensuring that both of them are
+* true before running a respective statement. This can be used to conditionally render components because of the
+* short circuit.
+*
+* if the first condition is true only then will it test the second condition, but if the first condition is false it
+* won't even run the second test "condition" and in this case the second test is the rendering of a component or
+* Some code unit that results in a native DOM element. if the first condition is false, that element will not be
+* rendered at all
+*
+* Would use a ternary if something is going to be rendered one way if a condition is true and a different way if that
+* same condition is false
+*
+* If you need to decide between more than two options or need more complex decision logic,
+*
+* you coudl stirng ternary operators together, which I would not recommend, you could potentially use map functions,
+*
+* you coudl string map functions or other mapping logic functions together,
+*
+* or you could just use C style if else logic, or even switch statements.
+*
+* still ahve a lot left ot learn in this section so we keep moving forward.
+*
+* manage and deal with forms in react, strange segue but from are one of the most difficult things to understand and use.
+*
+* one of reacts greatest weaknesses is probably forms.
+*
+* many forms libraries that many people turn to so you don't have to build and manage from scratch.
+*
+* a really small form in the meme generator is not too difficult and a little practice goes a long way.
+*
+* forms have an action with a url that processes the form, method of post, submitted through submit obutton, php processes the form
+*
+* javascript and vanilla javascript
+*
+* selector (get element by ID) goes and gets the form and adds a submit event listener. Function will gather all of the
+* information entered on the form and then submit it to the API somehow.
+*
+* in react we track every single keystroke and that data already is populated when the time comes to submit.
+*
+* in javascript we submit button click it runs a function gather all the data adn then submit it at that time, in recat we maintain up to date state on any input that happnes in our form, we need state to hold current data typed into our input.
+*
+*
+*
+* */
 
-remember that we have ot wrap the function in another function to pass arguments to it. (OR USE A CLOSURE)
-
-so onClick is assigned like this:
-onCLick={()=>{props.toggle(props.id)}} //GOOD EXAMPLE FOR CLOSURE REFACTORING
-
-when we call this function we are updating react state,
-
-when we update a variable that is defined as react state, i.e.
-[sArrayOfBoxes, sSetArrayOfBoxes]React.useState(arrayOfBoxes)
-
-then we need to consider if we are updating react state with regard to what the state previously was.
-
-so if we are counting up, then we need to use the function that is passed back to us to update react state.
-since we care about what the number previously was to get the new number.
-
-And in this case, if we are updating an element in an array, then we need to use the previous contents of the array
-that that element is included.
-
-My other problem with this is that the state is not at the leaves.
-
-the state is at a parent of the leaves for some arbitrary learning related reason to show how to communicate with a parent
-for dynamically generated children.
-
-if you are having to pass areound IDs to change the state of a component, that should be your first hint that the state
-you are trying to change should be at the level of the component from which you are having to pass an ID.
-
-I suppose that the article that the speaker previously brought up goes against my instinct. I am just going to trust
-that that is the case and that I don't need "derived state" which is what I am describing.
-
-if the parent intializes the components with their state, then, the state should live in the parent I guess.
-
-
-
-
-*/
