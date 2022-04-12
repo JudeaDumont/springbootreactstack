@@ -132,10 +132,10 @@ useEffect can be thought of as a blank canvas that react gives us to perform som
 
  if we leave that as an empty array, then we tell react that we want to runn it on the very first run.  but then,
 
- becuase those values never change, it will enver run again.
+ because those values never change, it will enver run again.
 
- useEffect is litterally just a different means of detecting differences, adnif there are differences it addds those
- differences onto the end of the rerenders that occur as a result of rerendering the component.
+ useEffect is literally just a different means of detecting differences, adnif there are differences it addds those
+ differences onto the end of the renders that occur as a result of rerendering the component.
 
  and now,
 
