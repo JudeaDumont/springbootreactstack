@@ -20,6 +20,7 @@ import Level2App from "../FollowReactCrashCourse/FormsBasic/Level2App";
 import Level3App from "../FollowReactCrashCourse/FormsBasic/Level3App";
 import Level4App from "../FollowReactCrashCourse/FormsBasic/Level4App";
 import Level5App from "../FollowReactCrashCourse/FormsBasic/Level5App";
+import Level6App from "../FollowReactCrashCourse/FormsBasic/Level6App";
 
 class ObjectApp extends Component {
 
@@ -38,7 +39,7 @@ class ObjectApp extends Component {
                 {/*<Level1App/>*/}
                 {/*<Level2App/>*/}
                 {/*<Level3App/>*/}
-                <Level5App/>
+                <Level6App/>
                 {/*<ConditionalRenderingApp/>*/}
                 {/*<DarkThemeAppUnified/>*/}
 
