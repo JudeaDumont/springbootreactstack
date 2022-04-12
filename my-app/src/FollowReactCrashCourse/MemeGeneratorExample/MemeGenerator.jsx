@@ -2,24 +2,36 @@ import React from "react";
 import memesData from "./memesData";
 import MemeImage from "./MemeImage";
 
+
 export default function MemeGenerator() {
-    const [meme, setMeme] = React.useState({
+    const [memeData, setMemeData] = React.useState({
         url: getMemeURL(),
-        btmtxt: "",
         toptxt: "",
+        btmtxt: "",
     })
 
     function getMemeURL() {
         return memesData.data.memes[Math.floor(Math.random() * memesData.data.memes.length)].url;
     }
 
-    function handleButtonClick(){
+    function handleButtonClick() {
         // noinspection JSCheckFunctionSignatures
-        setMeme(prevMeme => ({ ...prevMeme, url: getMemeURL()}))
+        setMemeData(prevMeme => ({...prevMeme, url: getMemeURL()}))
     }
-    function handleSubmit(){
+
+    function handleChange(event) {
+        setMemeData(prevMemeData => {
+            const {name, value} = event.target
+            return {
+                ...prevMemeData, [name]: value
+            }
+        })
+    }
+
+    function handleSubmit() {
         console.log("SUBMOOT")
     }
+
     return (
         <main>
             <div className={"form"} onSubmit={handleSubmit}>
@@ -27,11 +39,17 @@ export default function MemeGenerator() {
                     type={"text"}
                     placeholder={"Top Text"}
                     className={"form--input"}
+                    name={"toptxt"}
+                    value={memeData.toptxt}
+                    onChange={handleChange}
                 />
                 <input
                     type={"text"}
                     placeholder={"Bottom Text"}
                     className={"form--input"}
+                    name={"btmtxt"}
+                    value={memeData.btmtxt}
+                    onChange={handleChange}
                 />
                 <button
                     onClick={handleButtonClick}
@@ -39,7 +57,7 @@ export default function MemeGenerator() {
                 >
                     New Meme Image
                 </button>
-                <MemeImage memeUrl={meme.url}/>
+                <MemeImage memeData={memeData}/>
             </div>
         </main>
     )
@@ -74,7 +92,6 @@ export default function MemeGenerator() {
 //
 //     seperate components flder even if it is not really necessary.
 //a
-
 
 
 /*

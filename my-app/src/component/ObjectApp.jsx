@@ -36,14 +36,14 @@ class ObjectApp extends Component {
     render() {
         return (
             <div>
+
+                <MemeGeneratorExample/>
                 {/*<Level1App/>*/}
                 {/*<Level2App/>*/}
                 {/*<Level3App/>*/}
-                <Level6App/>
+                {/*<Level6App/>*/}
                 {/*<ConditionalRenderingApp/>*/}
                 {/*<DarkThemeAppUnified/>*/}
-
-                {/*<MemeGeneratorExample/>*/}
                 {/*<UpdateObjectComponentExample/>*/}
 
                 {/*<APIExampleApp/>*/}
