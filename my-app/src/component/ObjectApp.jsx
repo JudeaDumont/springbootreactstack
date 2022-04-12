@@ -9,7 +9,7 @@ import ObjectDeleteComponent from "./ObjectDeleteComponent";
 import IntroToLogic from "../FollowReactCrashCourse/introductiontologicincomponent";
 import MyParentComponent from "../FollowReactCrashCourse/ParentChildPropertiesExample";
 import SquaringComponent from "../FollowReactCrashCourse/squaring component";
-import APIExampleApp from "../FollowReactCrashCourse/APICallsExample/APIExampleApp";
+import HardCodedExampleApp from "../FollowReactCrashCourse/HardCodedExample/HardCodedExampleApp";
 import MemeGeneratorExample from "../FollowReactCrashCourse/MemeGeneratorExample/MemeGeneratorExample";
 import UpdateObjectComponentExample from "../FollowReactCrashCourse/UpdatingObjectProperties/UpdateObjectApp";
 import DarkThemeApp from "../FollowReactCrashCourse/DarkThemeExample/DarkThemeApp";

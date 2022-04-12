@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import SomeData from "./SomeData";
 
-class APIExampleComponent extends Component {
+class HardCodedExample extends Component {
     render() {
         return (
             <div>
@@ -12,9 +12,9 @@ class APIExampleComponent extends Component {
     }
 }
 
-export default function APIExampleApp() {
+export default function HardCodedExampleApp() {
     const dataElements = SomeData.map(d => {
-        return <APIExampleComponent somedata={d}/>
+        return <HardCodedExample somedata={d}/>
     })
     return (
         <div>
