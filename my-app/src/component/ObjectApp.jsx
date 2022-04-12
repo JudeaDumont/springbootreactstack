@@ -24,6 +24,7 @@ import Level6App from "../FollowReactCrashCourse/FormsBasic/Level6App";
 import APIExampleLevel1 from "../FollowReactCrashCourse/APIs/APIExampleLevel1";
 import APIExampleLevel2 from "../FollowReactCrashCourse/APIs/APIExampleLevel2";
 import APIExampleLevel3 from "../FollowReactCrashCourse/APIs/APIExampleLevel3";
+import APIExampleLevel4 from "../FollowReactCrashCourse/APIs/APIExampleLevel4";
 
 class ObjectApp extends Component {
 
@@ -39,7 +40,7 @@ class ObjectApp extends Component {
     render() {
         return (
             <div>
-                {<APIExampleLevel3/>}
+                {<APIExampleLevel4/>}
                 {/*{<APIExampleLevel1/>}*/}
                 {/*<MemeGeneratorExample/>*/}
                 {/*<Level1App/>*/}
