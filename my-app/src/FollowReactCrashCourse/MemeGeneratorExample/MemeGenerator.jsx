@@ -1,26 +1,36 @@
 import React from "react";
-import memesData from "./memesData";
 import MemeImage from "./MemeImage";
 
 
 export default function MemeGenerator() {
-    const [memeData, setMemeData] = React.useState({
-        url: getMemeURL(),
+    const [data, setData] = React.useState({
+        memeData: {},
+        url: "",
         toptxt: "",
         btmtxt: "",
     })
+    React.useEffect(() => {
+            console.log("CREAM")
+            fetch("https://api.imgflip.com/get_memes").then(res => res.json()).then(
+                data => setData(prevData => {
+                    return {...prevData, memeData: data, url:data.data.memes[Math.floor(Math.random() * data.data.memes.length)].url}
+                })
+            )
+        }
+        , []// runs once on component load and then does not load on subsequent occurrences of component rerender
+    )
 
     function getMemeURL() {
-        return memesData.data.memes[Math.floor(Math.random() * memesData.data.memes.length)].url;
+        return data.memeData.data.memes[Math.floor(Math.random() * data.memeData.data.memes.length)].url;
     }
 
     function handleButtonClick() {
         // noinspection JSCheckFunctionSignatures
-        setMemeData(prevMeme => ({...prevMeme, url: getMemeURL()}))
+        setData(prevMeme => ({...prevMeme, url: getMemeURL()}))
     }
 
     function handleChange(event) {
-        setMemeData(prevMemeData => {
+        setData(prevMemeData => {
             const {name, value} = event.target
             return {
                 ...prevMemeData, [name]: value
@@ -40,7 +50,7 @@ export default function MemeGenerator() {
                     placeholder={"Top Text"}
                     className={"form--input"}
                     name={"toptxt"}
-                    value={memeData.toptxt}
+                    value={data.toptxt}
                     onChange={handleChange}
                 />
                 <input
@@ -48,7 +58,7 @@ export default function MemeGenerator() {
                     placeholder={"Bottom Text"}
                     className={"form--input"}
                     name={"btmtxt"}
-                    value={memeData.btmtxt}
+                    value={data.btmtxt}
                     onChange={handleChange}
                 />
                 <button
@@ -57,7 +67,7 @@ export default function MemeGenerator() {
                 >
                     New Meme Image
                 </button>
-                <MemeImage memeData={memeData}/>
+                <MemeImage memeData={data}/>
             </div>
         </main>
     )

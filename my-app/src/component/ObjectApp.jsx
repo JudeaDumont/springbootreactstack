@@ -40,9 +40,9 @@ class ObjectApp extends Component {
     render() {
         return (
             <div>
-                {<APIExampleLevel4/>}
+                {/*{<APIExampleLevel4/>}*/}
                 {/*{<APIExampleLevel1/>}*/}
-                {/*<MemeGeneratorExample/>*/}
+                <MemeGeneratorExample/>
                 {/*<Level1App/>*/}
                 {/*<Level2App/>*/}
                 {/*<Level3App/>*/}
