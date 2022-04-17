@@ -26,6 +26,7 @@ import APIExampleLevel2 from "../FollowReactCrashCourse/APIs/APIExampleLevel2";
 import APIExampleLevel3 from "../FollowReactCrashCourse/APIs/APIExampleLevel3";
 import APIExampleLevel4 from "../FollowReactCrashCourse/APIs/APIExampleLevel4";
 import WindowTrackerExample from "../FollowReactCrashCourse/WindowTrackerExample/WindowTrackerExample";
+import WindowTrackerExample2 from "../FollowReactCrashCourse/WindowTrackerExample2/WindowTrackerExample";
 
 class ObjectApp extends Component {
 
@@ -41,7 +42,7 @@ class ObjectApp extends Component {
     render() {
         return (
             <div>
-                {<WindowTrackerExample/>}
+                {<WindowTrackerExample2/>}
                 {/*{<APIExampleLevel4/>}*/}
                 {/*{<APIExampleLevel1/>}*/}
                 {/*<MemeGeneratorExample/>*/}
