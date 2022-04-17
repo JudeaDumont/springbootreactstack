@@ -215,3 +215,119 @@ let answer = isGoingOut ? "yes" : "no"
 
 ternary operators can be embedded directly into html using eht javascript notation a.k.a "{ ballsack }"
 */
+
+
+/*
+
+first we make a call to React.useEffect()
+
+then inside useEffect we make an arrow function React.useEffect(() => {})
+
+think about the dependencies
+
+we want to first load all of this meme data in state and then we are accessing a random one of those memes
+to show on our web page.
+
+one thing to note is that there is nothing that is changing in state that will require another API request
+
+so, since we have no dependencies for the effect, we are just going to use an empty array
+
+then inside the useEffect function we are going to make a fetch to the meme data host URL
+then we will get the json of the request data
+
+first we just console.log the data to see what we get back, first logging the data that we get back from a request
+is a good sanity check for our expectations and make sure that ouir request is working.
+
+set all memes now in the state, however, if you read carefully we just want the array part of the data we get back.
+
+I don't think that makes very much sense to me though so I will be keeping all of it.
+
+Better to keep data that comes in as a unified structure as the unified structure.
+
+data.data is fine, you can rename the first data to have explicit aliasing to the request itself in more abiguous circumstances
+
+outside of the effect we console log on memes, ont he very first render, it will fetch the memes, parse the json and set our data iwith the data memes array.
+
+
+setting our state will cause a rerender and then the console log will run again after the state changes.
+
+of course any time you click the button on the meme generator
+any time you change the inptus,
+this will also cause a rerender and therefor that console.log line will run. but lets just see what it gives us on initial load.
+
+we are going to replace the memesData json file that we used to initialize react state and replace the "memesData" array
+that we passed React.useState with an empty array
+
+so we should get an empty array first and then we should get the memes data that we got from the API
+
+everytime we print something here we are gogin to be logging all emmes to the console
+
+go ahead and make sure everythign else is working correctly, we can get a new image.
+
+but oh no we have another bug in our code, one that I think I already fixed.
+
+there is a difference between what we were importing form our memesdata.js file and what the setting of state via the API call.
+
+yeah, so the solution was to set the url for the meme displayed on the page to one random one in the data we just set.
+
+The following line does the trick:
+
+            fetch("https://api.imgflip.com/get_memes").then(res => res.json()).then(
+                data => setData(prevData => {
+                    return {...prevData, memeData: data, url:data.data.memes[Math.floor(Math.random() * data.data.memes.length)].url}
+                })
+            )
+
+befoire, we were importing memes data so we had this object called memesdata.memes, in state we were intiializing it with the entire object, not jsut the memes array
+
+so the structing of us getting our data must change, which I laready did.
+
+all memes is an array not an object with a data property, replace memesaraay with all memes and we don't need that structuring anymore.
+
+so now we are just indexing into the array at the propeer level of the obejcts structure.
+
+async await, it may have been tempting to make the callback function an async function so that you can use the await function
+so that you can tidy up the code that is making use of promises and resolving them using .then()
+
+
+you never want to make the function that you are passing to react hooks an async fucntion
+before we move on we are going to talk more about react hooks and the functions you apass to them.
+
+pretty simple challenge here.
+
+in a new app, we are rendering a button and a component called window tracker.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*/
