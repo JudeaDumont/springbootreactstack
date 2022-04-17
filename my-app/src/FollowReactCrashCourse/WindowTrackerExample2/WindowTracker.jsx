@@ -60,24 +60,4 @@ so it will register the use effect, which, if the windowtracker is toggled on, w
 
  developers are expected to clean up after their side effects.
 
- the reason why we can't use async has to do with this destructor function that we can return from the function that we pass to useEffect
-
- if you put async infront of a function it alters the way that function executes
-
- if a funciton is marked as async then the return value is not simply a bare value that can be assigned to a variable for instance
-
- instead it will always return a promise,
-
- so what we code as being returned will be resolved as a successful promise completion of the async function.
-
- react.useEffect is expecting a function that returns a function that can be used to clean up any side effects, not a
- promise that must be "unwrapped" into a function that is assignable
-
- if we need to use async then we should do so as a separate function that is defined within the top level function passed
- to useEffect
-
-
-
-
-
  */
