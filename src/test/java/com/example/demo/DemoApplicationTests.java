@@ -59,4 +59,15 @@ class DemoApplicationTests {
 		tx.commit();
 		assert shouldBeNull == null;
 	}
+
+
+	@Test
+	@Order(6)
+	void getObject() {
+		Session session = DatabaseConnecter.getSessionFactory().openSession();
+		Transaction tx = session.beginTransaction();
+		SomeObject shouldBeNull = session.get(SomeObject.class, 12L);
+		tx.commit();
+		assert shouldBeNull != null;
+	}
 }
